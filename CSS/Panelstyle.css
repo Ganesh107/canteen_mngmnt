@@ -1,0 +1,8 @@
+﻿.panel {
+    box-shadow: 2px 2px 8px 1px grey;
+    border-radius:12px;
+}
+
+.add{
+    margin-bottom:5px;
+}

@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="~/CSS/GetAllSouthIndian.css" rel="stylesheet" />
+    <link href="~/CSS/Panelstyle.css" rel="stylesheet" />
 </head>
 <br />
 <body>
@@ -9,37 +10,58 @@
         <h2 class="animate__animated animate__fadeInDown"><strong>Beverages Menu</strong></h2>
         <br />
     </center>
-    <span class="glyphicon glyphicon-plus text-primary animate__animated animate__fadeInLeft"></span> @Html.ActionLink("Add fooditem ", "AddChinese", null, new { style = "text-decoration:none;", @class = "animate__animated animate__fadeInLeft back" })
-    <table class="table table-bordered animate__animated animate__fadeInUp">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.itemname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.price)
-            </th>
-            <th>Action</th>
+    <div class="animate__animated animate__fadeInDown add">
+        <span class="glyphicon glyphicon-plus text-primary"></span> @Html.ActionLink("Add fooditem ", "AddBeverages", null, new { style = "text-decoration:none;", @class = "animate__animated animate__fadeInLeft back" })
+    </div>
+    <div class="panel panel-default  animate__animated animate__fadeInUp">
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.itemname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.price)
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
 
-        </tr>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.itemname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.price)
+                            </td>
+                            <td>
+                                @Html.ActionLink(" ", "EditBeverages", new { id = item.id }, new { @class = "glyphicon glyphicon-pencil" }) &nbsp;
+                                @Html.ActionLink(" ", "DeleteBeverages", new { id = item.id }, new { @class = "glyphicon glyphicon-trash text-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.itemname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.price)
-                </td>
-                <td>
-                    @Html.ActionLink(" ", "EditBeverages", new { id = item.id }, new { @class = "glyphicon glyphicon-pencil" }) &nbsp;
-                    @Html.ActionLink(" ", "DeleteBeverages", new { id = item.id }, new { @class = "glyphicon glyphicon-trash text-danger" })
-                </td>
-            </tr>
-        }
-
-    </table>
-    <p>
-        <span class="glyphicon glyphicon-arrow-left text-primary animate__animated animate__fadeInLeft"></span> @Html.ActionLink("CategoryList", "CategoryList", null, new { style = "text-decoration:none;", @class = "animate__animated animate__fadeInLeft back" })
+    <p class="animate__animated animate__fadeInLeft">
+        <span class="glyphicon glyphicon-arrow-left text-primary"></span> @Html.ActionLink("CategoryList", "CategoryList", null, new { style = "text-decoration:none;", @class = "animate__animated animate__fadeInLeft back" })
     </p>
+
+    <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+    @section scripts{
+        <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('table').DataTable({
+                    lengthMenu: [5, 10, 15],
+                });
+            });
+        </script>
+    }
 </body>

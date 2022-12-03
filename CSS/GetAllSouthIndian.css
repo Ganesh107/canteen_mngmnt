@@ -1,7 +1,15 @@
-﻿th{
+﻿.panel {
+    box-shadow: 2px 2px 8px 1px grey;
+}
+
+th{
     font-size:large;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align:center;
+}
+
+thead, th {
+    text-align: center;
+    background: #ce93d8;
 }
 
 td{
@@ -13,3 +21,4 @@ td{
 .back{
     font-size:medium;
 }
+
