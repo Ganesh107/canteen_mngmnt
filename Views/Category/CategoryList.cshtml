@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "CategoryList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/CSS/CategoryPage.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<br />
+<br />
+
+<body>
+    <div class="container">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="panel panel-default animate__animated animate__fadeInDown">
+                <div class="panel-heading"><center><h2><strong>Category List</strong></h2></center></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col">
+                            <center>@Html.ActionLink("SouthIndian Food", "GetAllSouthIndianfood", null, new { style = "text-decoration:none;", @class = "test" })</center>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <center>@Html.ActionLink("NorthIndian Food", "GetAllNorthIndianfood", null, new { style = "text-decoration:none;", @class = "test" })</center>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <center>@Html.ActionLink("Chinese", "GetAllChinese", null, new { style = "text-decoration:none;", @class = "test" })</center>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <center>@Html.ActionLink("Deserts", "GetAllDeserts", null, new { style = "text-decoration:none;", @class = "test" })</center>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <center>@Html.ActionLink("Beverages", "GetAllBeverages", null, new { style = "text-decoration:none;", @class = "test" })</center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+

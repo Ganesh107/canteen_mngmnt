@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CanteenManagement.Models.SouthIndian>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="~/CSS/GetAllSouthIndian.css" rel="stylesheet" />
+</head>
+<br />
+<body>
+    <center>
+        <h2 class="animate__animated animate__fadeInDown"><strong>SouthIndian Menu</strong></h2>
+        <br />
+    </center>
+    <span class="glyphicon glyphicon-plus text-primary animate__animated animate__fadeInLeft"></span> @Html.ActionLink("Add fooditem ", "AddChinese", null, new { style = "text-decoration:none;", @class = "animate__animated animate__fadeInLeft back" })
+    <table class="table table-bordered animate__animated animate__fadeInUp">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.itemname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>Action</th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.itemname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "EditSouthFood", new { id = item.id }, new { @class = "glyphicon glyphicon-pencil" }) &nbsp;
+                    @Html.ActionLink(" ", "DeleteSouthFood", new { id = item.id }, new { @class = "glyphicon glyphicon-trash text-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        <span class="glyphicon glyphicon-arrow-left text-primary animate__animated animate__fadeInLeft"></span> @Html.ActionLink("CategoryList", "CategoryList", null, new { style = "text-decoration:none;", @class = "animate__animated animate__fadeInLeft back" })
+    </p>
+</body>

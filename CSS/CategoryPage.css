@@ -1,0 +1,30 @@
+﻿body {
+     background-image: url('../images/food.jpg');
+     background-size:cover;
+     opacity:0.87;
+}
+
+.panel {
+    box-shadow: 2px 2px 8px 1px grey;
+    background-color:black;
+}
+
+
+.row {
+    padding: 5px;
+}
+
+.test{
+    font-weight:bold;
+    font-size:22px;
+    color:white;
+}
+
+.test:hover{
+    color:green;
+    zoom:1.2;
+}
+
+hr{
+    color:green;
+}
