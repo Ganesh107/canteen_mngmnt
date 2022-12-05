@@ -7,7 +7,7 @@
 <br />
 <body>
     <center>
-        <h2 class="animate__animated animate__fadeInDown"><strong>Deserts Menu</strong></h2>
+        <h1 class="animate__animated animate__fadeInDown"><strong>Deserts Menu</strong></h1>
         <br />
     </center>
     <div class="animate__animated animate__fadeInDown add">
@@ -60,6 +60,7 @@
             $(document).ready(function () {
                 $('table').DataTable({
                     lengthMenu: [5, 10, 15],
+                    columnDefs: [{ className: "dt-head-center", targets: [0, 1, 2] }]
                 });
             });
         </script>
